@@ -5,7 +5,7 @@
     "skills": "Skills",
     "contact": "Contact",
     "menu": "Menu",
-    "portfolio": "Zakariya Irhir — Portfolio"
+    "portfolio": "Zakariya Aghir — Portfolio"
   },
   "hero": {
     "role": "Full-Stack Developer — Product & Engineering",
@@ -14,7 +14,7 @@
   },
   "home": {
     "demoTitle": "Technical Demonstration",
-    "demoSub": "Live overview of workflows and user interface.",
+    "demoSub": "Live overview of workflows.",
     "projectsTitle": "Featured Projects",
     "projectsSub": "A deep dive into architecture and provided solutions.",
     "notesTitle": "Technical Notes",
@@ -27,7 +27,7 @@
     "problemSolved": "Engineering Problem Solved"
   },
   "personal": {
-    "name": "Zakariya Irhir",
+    "name": "Zakariya Aghir",
     "bio": "Full-Stack Developer dedicated to creating high-impact digital solutions. I oversee projects from crafting polished interfaces to rigorous backend engineering (performant REST APIs, strict state synchronization, and optimized persistence), ensuring reliable, production-ready applications.",
     "avatar": "/photodata/avatar.png",
     "location": "Rabat, Morocco",
