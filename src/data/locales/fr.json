@@ -5,7 +5,7 @@
     "skills": "Compétences",
     "contact": "Contact",
     "menu": "Menu",
-    "portfolio": "Zakariya Aghir — Portfolio"
+    "portfolio": "Zakarya Irhir — Portfolio"
   },
   "hero": {
     "role": "Développeur Full-Stack — Produits & Ingénierie",
@@ -27,7 +27,7 @@
     "problemSolved": "Engineering Problem Solved"
   },
   "personal": {
-    "name": "Zakariya Aghir",
+    "name": "Zakarya Irhir",
     "bio": "Développeur Full-Stack dédié à la création de solutions numériques à fort impact opérationnel. J'accompagne les projets de la conception d'interfaces soignées à l'ingénierie backend rigoureuse (APIs REST performantes, synchronisation d'état stricte et persistance optimisée), garantissant des applications fiables prêtes pour la production.",
     "avatar": "/photodata/avatar.png",
     "location": "Rabat, Maroc",
