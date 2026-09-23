@@ -58,7 +58,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
 
         <div className="flex flex-wrap gap-2 mt-2">
           {project.tags.map((tag) => (
-            <span key={tag} className="px-2.5 py-1 text-xs font-medium bg-zinc-800 text-zinc-300 rounded-md" dir="ltr">
+            <span key={tag} className="px-2.5 py-1 text-xs font-medium bg-zinc-800 text-zinc-300 rounded-md" dir="ltr" translate="no">
               {tag}
             </span>
           ))}

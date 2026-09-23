@@ -82,7 +82,7 @@ export function Hero() {
       </section>
 
       {/* Huge Skills Marquee */}
-      <section id="skills" className="w-full border-y border-zinc-900 bg-zinc-950/50 py-6 md:py-10 overflow-hidden relative z-20">
+      <section id="skills" className="w-full border-y border-zinc-900 bg-zinc-950/50 py-6 md:py-10 overflow-hidden relative z-20" dir="ltr" translate="no">
         <motion.div
           animate={{ x: ["0%", "-50%"] }}
           transition={{ repeat: Infinity, ease: "linear", duration: 40 }}
