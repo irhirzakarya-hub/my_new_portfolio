@@ -47,35 +47,37 @@ export function Navbar() {
       </nav>
 
       {isOpen && (
-        <div
-          style={{ zIndex: 99999 }}
-          className="fixed inset-0 bg-zinc-950/95 backdrop-blur-xl flex flex-col items-center justify-center transition-opacity duration-300"
-        >
-          <button
+        <>
+          {/* Backdrop */}
+          <div 
+            className="fixed inset-0 z-40 bg-zinc-950/40 backdrop-blur-sm md:hidden"
             onClick={() => setIsOpen(false)}
-            className="absolute top-6 right-6 p-2 rounded-full border border-zinc-800 text-zinc-400 hover:text-white hover:bg-zinc-900 transition-colors"
-          >
-            <X className="w-6 h-6" />
-          </button>
-
-          <div className="flex flex-col items-center gap-8 text-2xl md:text-4xl font-bold tracking-tight">
-            {links.map((link) => (
-              <a
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsOpen(false)}
-                className="text-zinc-400 hover:text-white transition-colors relative group"
-              >
-                {link.label}
-                <span className="absolute -bottom-2 left-0 w-0 h-1 bg-blue-500 transition-all group-hover:w-full"></span>
-              </a>
-            ))}
-          </div>
+          />
           
-          <div className="absolute bottom-10 text-zinc-600 font-mono text-sm">
-            Zakariya Irhir — Portfolio
+          {/* Floating Menu */}
+          <div
+            style={{ zIndex: 99999 }}
+            className="fixed top-20 left-6 right-6 md:hidden bg-zinc-900/90 backdrop-blur-xl border border-zinc-800 rounded-3xl p-6 shadow-2xl"
+          >
+            <div className="flex flex-col gap-4">
+              {links.map((link) => (
+                <a
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsOpen(false)}
+                  className="flex items-center justify-between text-lg font-medium text-zinc-300 hover:text-white p-3 rounded-xl hover:bg-zinc-800/50 transition-all"
+                >
+                  {link.label}
+                  <span className="text-blue-500 opacity-0 group-hover:opacity-100 transition-opacity">→</span>
+                </a>
+              ))}
+            </div>
+            
+            <div className="mt-6 pt-6 border-t border-zinc-800/50 text-center text-xs font-mono text-zinc-500">
+              Zakariya Irhir — Portfolio
+            </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );
