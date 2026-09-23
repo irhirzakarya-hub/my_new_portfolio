@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 interface Project {
   id: string;
@@ -15,6 +16,8 @@ interface Project {
 }
 
 export function ProjectCard({ project, index }: { project: Project; index: number }) {
+  const { t, lang } = useLanguage();
+
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -47,7 +50,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
         </p>
         
         <div className="bg-zinc-950/50 p-4 rounded-lg border border-zinc-800">
-          <h4 className="text-xs font-semibold text-white mb-2 uppercase tracking-wider">Engineering Problem Solved</h4>
+          <h4 className={`text-xs font-semibold text-white mb-2 uppercase ${lang !== 'ar' ? 'tracking-wider' : ''}`}>{t.projectCard.problemSolved}</h4>
           <p className="text-sm text-zinc-400 leading-relaxed">
             {project.problemSolved}
           </p>
@@ -55,7 +58,7 @@ export function ProjectCard({ project, index }: { project: Project; index: numbe
 
         <div className="flex flex-wrap gap-2 mt-2">
           {project.tags.map((tag) => (
-            <span key={tag} className="px-2.5 py-1 text-xs font-medium bg-zinc-800 text-zinc-300 rounded-md">
+            <span key={tag} className="px-2.5 py-1 text-xs font-medium bg-zinc-800 text-zinc-300 rounded-md" dir="ltr">
               {tag}
             </span>
           ))}

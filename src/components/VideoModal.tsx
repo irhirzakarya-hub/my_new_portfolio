@@ -4,11 +4,13 @@ import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { Play, Pause, Volume2, VolumeX } from "lucide-react";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function VideoModal() {
   const videoRef = useRef<HTMLVideoElement>(null);
   const [isPlaying, setIsPlaying] = useState(false);
   const [isMuted, setIsMuted] = useState(true);
+  const { t } = useLanguage();
 
   const togglePlay = () => {
     if (videoRef.current) {
@@ -41,7 +43,7 @@ export function VideoModal() {
       <div className="aspect-video relative">
         {/* Placeholder if video is not available */}
         <div className="absolute inset-0 bg-zinc-800 flex items-center justify-center text-zinc-500 font-mono text-sm z-0">
-          Video Content
+          {t.video.placeholder}
         </div>
         
         <video

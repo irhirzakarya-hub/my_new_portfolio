@@ -1,11 +1,12 @@
 "use client";
 
 import { Mail } from "lucide-react";
-import data from "../data/portfolio.json";
 import Image from "next/image";
+import { useLanguage } from "@/context/LanguageContext";
 
 export function Footer() {
-  const { footer, personal } = data;
+  const { t, lang } = useLanguage();
+  const { footer, personal } = t;
 
   return (
     <footer id="contact" className="border-t border-zinc-800 bg-zinc-950 mt-32 py-16 px-4 md:px-8">
@@ -55,9 +56,9 @@ export function Footer() {
 
       </div>
       
-      <div className="max-w-5xl mx-auto mt-16 pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-500 font-mono">
-        <p>&copy; {new Date().getFullYear()} {personal.name}. All rights reserved.</p>
-        <p>Built with Next.js & Framer Motion</p>
+      <div className={`max-w-5xl mx-auto mt-16 pt-8 border-t border-zinc-800/50 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-zinc-500 ${lang !== 'ar' ? 'font-mono' : ''}`} dir="ltr">
+        <p>&copy; {new Date().getFullYear()} {personal.name}. {footer.rights}</p>
+        <p>{footer.builtWith}</p>
       </div>
     </footer>
   );

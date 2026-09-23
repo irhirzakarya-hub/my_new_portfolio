@@ -1,0 +1,110 @@
+{
+  "nav": {
+    "about": "About",
+    "projects": "Projects",
+    "skills": "Skills",
+    "contact": "Contact",
+    "menu": "Menu",
+    "portfolio": "Zakariya Irhir — Portfolio"
+  },
+  "hero": {
+    "role": "Full-Stack Developer — Product & Engineering",
+    "viewWork": "View Work ↗",
+    "contactMe": "Contact Me"
+  },
+  "home": {
+    "demoTitle": "Technical Demonstration",
+    "demoSub": "Live overview of workflows and user interface.",
+    "projectsTitle": "Featured Projects",
+    "projectsSub": "A deep dive into architecture and provided solutions.",
+    "notesTitle": "Technical Notes",
+    "notesSub": "Production code snippets and critical algorithms."
+  },
+  "video": {
+    "placeholder": "Video Content"
+  },
+  "projectCard": {
+    "problemSolved": "Engineering Problem Solved"
+  },
+  "personal": {
+    "name": "Zakariya Irhir",
+    "bio": "Full-Stack Developer dedicated to creating high-impact digital solutions. I oversee projects from crafting polished interfaces to rigorous backend engineering (performant REST APIs, strict state synchronization, and optimized persistence), ensuring reliable, production-ready applications.",
+    "avatar": "/photodata/avatar.png",
+    "location": "Rabat, Morocco",
+    "timezone": "GMT+1",
+    "contact": {
+      "email": "irhirzakarya@gmail.com",
+      "github": "https://github.com/irhirzakarya-hub/",
+      "linkedin": "https://linkedin.com/in/zakarya-irhir-847baa3b0",
+      "whatsapp": "212609683032"
+    }
+  },
+  "projects": [
+    {
+      "id": "taqsem",
+      "title": "Taqsem",
+      "subtitle": "Flagship Personal Project",
+      "description": "Unified project management and intelligent personal finance allocation system.",
+      "problemSolved": "Implemented an automatic budget segmentation algorithm with 4 distinct streams (Emergency Savings, Current/Monthly Expenses, Personal Investment & Skills, Financial Investments & Returns). Managed strict state to prevent overspending and predictive cash flow calculation.",
+      "tags": ["TypeScript", "Next.js", "Tailwind CSS", "LocalStorage", "IndexedDB", "Charts"],
+      "image": "/photodata/taqsem-1.png",
+      "link": "#"
+    },
+    {
+      "id": "manager-finance",
+      "title": "Finance Manager",
+      "subtitle": "B2B SaaS",
+      "description": "Corporate finance management and steering platform.",
+      "problemSolved": "Analytical tracking of cash flows, automated bank reconciliation, multi-account categorization, and real-time financial reporting with strict transaction validation.",
+      "tags": ["React", "Express.js", "MongoDB", "Redis", "Socket.io"],
+      "image": "/photodata/manager-finance-1.png",
+      "link": "#"
+    },
+    {
+      "id": "kronova",
+      "title": "Kronova",
+      "subtitle": "Construction ERP",
+      "description": "Tailor-made Human Resources Management System (HRMS) for construction companies.",
+      "problemSolved": "Complex management of mobile site schedules, temporary team allocation, geo-located time tracking, overtime calculation, and on-site safety certification compliance.",
+      "tags": ["React", "Next.js", "REST APIs", "RBAC", "Mobile-First UI"],
+      "image": "/photodata/kronova-1.png",
+      "link": "#"
+    }
+  ],
+  "techStack": [
+    { "name": "React", "icon": "/photodata/tech-react.png" },
+    { "name": "Node.js", "icon": "/photodata/tech-nodejs.png" },
+    { "name": "Express.js", "icon": "/photodata/tech-express.png" },
+    { "name": "MongoDB", "icon": "/photodata/tech-mongodb.png" },
+    { "name": "GraphQL", "icon": "/photodata/tech-graphql.png" },
+    { "name": "Next.js", "icon": "/photodata/tech-nextjs.png" },
+    { "name": "TypeScript", "icon": "/photodata/tech-typescript.png" },
+    { "name": "Tailwind", "icon": "/photodata/tech-tailwind.png" }
+  ],
+  "codeNotes": [
+    {
+      "id": "taqsem-engine.ts",
+      "title": "taqsem-engine.ts",
+      "description": "Revenue segmentation algorithm",
+      "code": "export function allocateRevenue(amount: number) {\n  return {\n    security: amount * 0.2,\n    current: amount * 0.5,\n    personal: amount * 0.1,\n    investment: amount * 0.2\n  };\n}"
+    },
+    {
+      "id": "kronova-shift.ts",
+      "title": "kronova-shift.ts",
+      "description": "Presence validation and site safety",
+      "code": "export async function validateShift(workerId: string, siteId: string) {\n  const hasClearance = await checkSafetyCert(workerId, siteId);\n  if (!hasClearance) throw new SecurityError('Clearance denied');\n  return clockIn(workerId, siteId, new Date());\n}"
+    },
+    {
+      "id": "finance-transaction.ts",
+      "title": "finance-transaction.ts",
+      "description": "Atomic cash balance verification",
+      "code": "export async function processTransaction(tx: Transaction) {\n  return prisma.$transaction(async (prisma) => {\n    const balance = await getBalance(tx.accountId);\n    if (balance - tx.amount < 0) throw new Error('Insufficient funds');\n    return commitTx(prisma, tx);\n  });\n}"
+    }
+  ],
+  "footer": {
+    "headline": "Let's build a solid and sustainable product.",
+    "subtitle": "Available for freelance missions and technical collaborations. Response within 24h.",
+    "rights": "All rights reserved.",
+    "builtWith": "Built with Next.js & Framer Motion"
+  }
+}

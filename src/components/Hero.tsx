@@ -2,11 +2,12 @@
 
 import { motion } from "framer-motion";
 import Image from "next/image";
-import data from "../data/portfolio.json";
+import { useLanguage } from "@/context/LanguageContext";
 import { Clock } from "./Clock";
 
 export function Hero() {
-  const { personal, techStack } = data;
+  const { t } = useLanguage();
+  const { personal, techStack, hero } = t;
 
   return (
     <>
@@ -21,10 +22,10 @@ export function Hero() {
             className="flex-1 text-left max-w-2xl"
           >
             <p className="text-blue-500 font-mono text-xs md:text-sm mb-6 tracking-wide uppercase">
-              Développeur Full-Stack — Produits & Ingénierie
+              {hero.role}
             </p>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white mb-8 leading-[1.1]">
-              Zakariya<br />Irhir
+              {personal.name.split(" ")[0]}<br />{personal.name.split(" ").slice(1).join(" ")}
             </h1>
             <p className="text-lg md:text-xl text-zinc-400 mb-10 leading-relaxed max-w-xl font-light">
               {personal.bio}
@@ -35,13 +36,13 @@ export function Hero() {
                 href="#projects"
                 className="px-6 py-3 rounded-full bg-white text-zinc-950 font-medium hover:bg-zinc-200 transition-colors flex items-center gap-2"
               >
-                Voir les travaux <span className="text-lg leading-none">↗</span>
+                {hero.viewWork}
               </a>
               <a
                 href="#contact"
                 className="px-6 py-3 rounded-full bg-transparent border border-zinc-700 text-white font-medium hover:bg-zinc-900 transition-colors"
               >
-                M'écrire
+                {hero.contactMe}
               </a>
             </div>
           </motion.div>
@@ -70,12 +71,12 @@ export function Hero() {
 
         {/* Bottom Info Bar (Absolute at bottom of Hero) */}
         <div className="absolute bottom-0 left-6 right-6 md:left-12 md:right-12 border-t border-zinc-800/50 py-4 flex items-center justify-between text-xs font-mono text-zinc-500">
-          <div>34.02°N 6.84°O</div>
+          <div dir="ltr">34.02°N 6.84°W</div>
           <div className="absolute left-1/2 -translate-x-1/2 hidden md:block">
             <Clock />
           </div>
           <div className="flex items-center gap-2">
-            Voir les travaux ↓
+            {hero.viewWork.replace(" ↗", "")} ↓
           </div>
         </div>
       </section>

@@ -12,6 +12,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
+import { LanguageProvider } from "@/context/LanguageContext";
+
 export const metadata: Metadata = {
   title: "Portfolio | Développeur Full-Stack",
   description: "Portfolio d'un développeur Full-Stack et Architecte Logiciel.",
@@ -28,7 +30,9 @@ export default function RootLayout({
       className={`${geistSans.variable} ${geistMono.variable} dark antialiased`}
     >
       <body className="min-h-screen bg-background text-foreground selection:bg-zinc-800 selection:text-white">
-        {children}
+        <LanguageProvider>
+          {children}
+        </LanguageProvider>
       </body>
     </html>
   );

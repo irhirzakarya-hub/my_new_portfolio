@@ -1,3 +1,5 @@
+"use client";
+
 import { Navbar } from "@/components/Navbar";
 import { Hero } from "@/components/Hero";
 import { Starfield } from "@/components/Starfield";
@@ -5,10 +7,11 @@ import { ProjectCard } from "@/components/ProjectCard";
 import { CodeCard } from "@/components/CodeCard";
 import { VideoModal } from "@/components/VideoModal";
 import { Footer } from "@/components/Footer";
-import data from "@/data/portfolio.json";
+import { useLanguage } from "@/context/LanguageContext";
 
 export default function Home() {
-  const { projects, codeNotes } = data;
+  const { t } = useLanguage();
+  const { projects, codeNotes, home } = t;
 
   return (
     <main className="relative min-h-screen bg-background text-foreground overflow-x-hidden selection:bg-zinc-800 selection:text-white">
@@ -19,8 +22,8 @@ export default function Home() {
       {/* Video Showcase Section */}
       <section className="relative z-10 max-w-5xl mx-auto px-4 py-20">
         <div className="mb-12 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Démonstration Technique</h2>
-          <p className="text-muted">Aperçu en direct des workflows et de l'interface utilisateur.</p>
+          <h2 className="text-3xl font-bold text-white mb-4">{home.demoTitle}</h2>
+          <p className="text-muted">{home.demoSub}</p>
         </div>
         <VideoModal />
       </section>
@@ -28,8 +31,8 @@ export default function Home() {
       {/* Featured Projects Section */}
       <section id="projects" className="relative z-10 max-w-5xl mx-auto px-4 py-20">
         <div className="mb-16">
-          <h2 className="text-3xl font-bold text-white mb-4">Projets Phares</h2>
-          <p className="text-muted">Une plongée profonde dans l'architecture et les solutions apportées.</p>
+          <h2 className="text-3xl font-bold text-white mb-4">{home.projectsTitle}</h2>
+          <p className="text-muted">{home.projectsSub}</p>
         </div>
 
         <div className="flex flex-col gap-16">
@@ -42,8 +45,8 @@ export default function Home() {
       {/* Technical Notes / Code Production Section */}
       <section className="relative z-10 max-w-5xl mx-auto px-4 py-20 border-t border-zinc-900 mt-10">
         <div className="mb-16 text-center">
-          <h2 className="text-3xl font-bold text-white mb-4">Notes Techniques</h2>
-          <p className="text-muted">Extraits de code de production et algorithmes critiques.</p>
+          <h2 className="text-3xl font-bold text-white mb-4">{home.notesTitle}</h2>
+          <p className="text-muted">{home.notesSub}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
